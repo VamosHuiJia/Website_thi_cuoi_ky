@@ -73,7 +73,7 @@ const Footer = (props) => {
           }}
         >
           <div className="container">
-            <h4 style={{ color: "#ffcc00", marginBottom: "15px" }}>Bản tin</h4>
+            <h4 style={{ color: "#ffcc00", marginBottom: "15px" }}>Nhập email để nhận thông tin sớm nhất từ chúng tôi</h4>
             <form>
               <input
                 type="text"
@@ -97,7 +97,7 @@ const Footer = (props) => {
                   fontWeight: "bold",
                 }}
               >
-                Đăng ký
+                Xác nhận
               </button>
             </form>
           </div>

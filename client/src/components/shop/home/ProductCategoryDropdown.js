@@ -66,7 +66,7 @@ const CategoryList = () => {
         ))
       ) : (
         <div className="text-xl text-center my-4 text-gray-500">
-          No Category
+          Không có danh mục
         </div>
       )}
     </div>
@@ -124,7 +124,7 @@ const FilterList = () => {
         <div className="flex justify-between items-center">
           <div className="flex flex-col space-y-2  w-2/3 lg:w-2/4">
             <label htmlFor="points" className="text-sm">
-              Price (between 0 and 10$):{" "}
+              Khoảng giá (tính từ 300000):{" "}
               <span className="font-semibold text-yellow-700">{range}.00$</span>{" "}
             </label>
             <input
@@ -132,8 +132,8 @@ const FilterList = () => {
               className="slider"
               type="range"
               id="points"
-              min="0"
-              max="1000"
+              min="300000"
+              max="100000000"
               step="10"
               onChange={(e) => rangeHandle(e)}
             />

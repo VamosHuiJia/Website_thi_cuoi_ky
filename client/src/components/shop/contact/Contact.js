@@ -4,13 +4,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Contact = () => {
   return (
     <div className="container mt-5 content">
-      <h1 className="mb-4 text-center">Liên hệ với chúng tôi</h1>
+      <h1 className="mb-4 text-center">Thông tin cửa hàng</h1>
       <div className="row">
         {/* Thông tin liên hệ */}
         <div className="col-md-6 mb-4">
           <h5>Thông tin liên hệ</h5>
           <p>
-            <strong>Địa chỉ:</strong> 123 Đường ABC, Quận 1, TP. Hồ Chí Minh
+            <strong>Địa chỉ:</strong> 427 Phạm Văn Đồng, Phường Cổ Nhuế 1, Quận Bắc Từ Liêm, Hà Nội
           </p>
           <p>
             <strong>Điện thoại:</strong> 091 234 5678
@@ -34,9 +34,9 @@ const Contact = () => {
 
         {/* Nội dung bổ sung */}
         <div className="col-md-6">
-  <h5>Sản phẩm công nghệ</h5>
+  <h5>Sản phẩm </h5>
   <p>
-    Các sản phẩm công nghệ là một phần không thể thiếu trong cuộc sống hiện đại. Từ điện thoại thông minh, máy tính xách tay, tai nghe không dây, cho đến các thiết bị thông minh trong nhà, chúng tôi mang đến cho bạn sự lựa chọn đa dạng và chất lượng cao.
+    Chào mừng đến với cửa hàng xe đạp của chúng tôi – nơi cung cấp những mẫu xe chất lượng, bền bỉ và phù hợp với mọi nhu cầu di chuyển, thể thao hay giải trí!
   </p>
   <ul>
     <li>
@@ -50,13 +50,13 @@ const Contact = () => {
     </li>
   </ul>
   <p>
-    Khám phá những thiết bị công nghệ mới nhất với tính năng tiên tiến nhất tại cửa hàng của chúng tôi. Hãy tận dụng các chương trình khuyến mãi đặc biệt để sở hữu sản phẩm yêu thích với giá ưu đãi.
+    Chúng tôi không chỉ bán xe đạp – chúng tôi mang đến cho bạn phong cách sống năng động, bền vững và đầy cảm hứng trên từng vòng quay.
   </p>
   <a
     href="/san-pham"
     className="btn btn-primary mt-3"
   >
-    Khám phá sản phẩm
+    Khám phá ngay
   </a>
 </div>
 
