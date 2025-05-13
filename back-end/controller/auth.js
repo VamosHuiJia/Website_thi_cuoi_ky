@@ -4,7 +4,10 @@ const userModel = require("../models/users");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../config/keys");
 
+//Xử lý đăng nhập / đăng ký
 class Auth {
+  /* Kiểm tra đăng nhập */
+  // Kiểm tra role
   async isAdmin(req, res) {
     let { loggedInUserId } = req.body;
     try {
@@ -14,7 +17,7 @@ class Auth {
       res.status(404);
     }
   }
-
+  // Kiểm tra xem có tài khoản chưa
   async allUser(req, res) {
     try {
       let allUser = await userModel.find({});
@@ -24,10 +27,12 @@ class Auth {
     }
   }
 
-  /* User Registration/Signup controller  */
+  /* Kiểm tra đăng ký tài khoản  */
   async postSignup(req, res) {
     let { name, email, password, cPassword } = req.body;
     let error = {};
+
+    // Không để trống
     if (!name || !email || !password || !cPassword) {
       error = {
         ...error,
@@ -38,22 +43,25 @@ class Auth {
       };
       return res.json({ error });
     }
+
+    // Kiểm tra độ dài kí tự + mật khẩu + email 
     if (name.length < 3 || name.length > 25) {
-      error = { ...error, name: "Name must be 3-25 charecter" };
+      error = { ...error, name: "Họ tên từ 3-25 ký tự" };
       return res.json({ error });
     } else {
       if (validateEmail(email)) {
         name = toTitleCase(name);
+        // Kiểm tra mật khẩu
         if ((password.length > 255) | (password.length < 8)) {
           error = {
             ...error,
-            password: "Password must be 8 charecter",
+            password: "Password phải nhiều hơn 8 ký tự",
             name: "",
             email: "",
           };
           return res.json({ error });
         } else {
-          // If Email & Number exists in Database then:
+          // Kiểm tra email đã tồn tại trong DB chưa:
           try {
             password = bcrypt.hashSync(password, 10);
             const data = await userModel.findOne({ email: email });
@@ -62,7 +70,7 @@ class Auth {
                 ...error,
                 password: "",
                 name: "",
-                email: "Email already exists",
+                email: "Email đã tồn tại",
               };
               return res.json({ error });
             } else {
@@ -70,13 +78,13 @@ class Auth {
                 name,
                 email,
                 password,
-                // ========= Here role 1 for admin signup role 0 for customer signup =========
+                
               });
               newUser
                 .save()
                 .then((data) => {
                   return res.json({
-                    success: "Account create successfully. Please login",
+                    success: "Tạo tài khoản thành công. Bạn hãy đăng nhập",
                   });
                 })
                 .catch((err) => {
@@ -92,42 +100,45 @@ class Auth {
           ...error,
           password: "",
           name: "",
-          email: "Email is not valid",
+          email: "Email không hợp lệ",
         };
         return res.json({ error });
       }
     }
   }
 
-  /* User Login/Signin controller  */
+  /* Kiểm tra đăng nhập */
   async postSignin(req, res) {
     let { email, password } = req.body;
     if (!email || !password) {
       return res.json({
-        error: "Fields must not be empty",
+        error: "Không được để trống",
       });
     }
     try {
       const data = await userModel.findOne({ email: email });
       if (!data) {
         return res.json({
-          error: "Invalid email or password",
+          error: "Email hoặc mật khẩu không hợp lệ",
         });
       } else {
         const login = await bcrypt.compare(password, data.password);
         if (login) {
+
           const token = jwt.sign(
             { _id: data._id, role: data.userRole },
             JWT_SECRET
           );
+
           const encode = jwt.verify(token, JWT_SECRET);
+
           return res.json({
             token: token,
             user: encode,
           });
         } else {
           return res.json({
-            error: "Invalid email or password",
+            error: "Email hoặc mật khẩu không hợp lệ",
           });
         }
       }

@@ -42,7 +42,7 @@ const AddCategoryModal = (props) => {
 
     if (!fData.cImage) {
       dispatch({ type: "loading", payload: false });
-      return setFdata({ ...fData, error: "Please upload a category image" });
+      return setFdata({ ...fData, error: "Hãy tải ảnh danh mục" });
     }
 
     try {

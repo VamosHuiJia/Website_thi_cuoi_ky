@@ -52,7 +52,7 @@ const Login = (props) => {
       <div className="text-center text-2xl mb-6">ĐĂNG NHẬP</div>
       {layoutData.loginSignupError ? (
         <div className="bg-red-200 py-2 px-4 rounded">
-          You need to login for checkout. Haven't accont? Create new one.
+          Bạn cần đăng nhập để thanh toán. Chưa có tài khoản? Tạo tài khoản mới.
         </div>
       ) : (
         ""

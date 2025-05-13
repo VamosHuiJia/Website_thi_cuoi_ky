@@ -64,7 +64,7 @@ const SettingComponent = () => {
               ""
             )}
             <div className="flex flex-col space-y-2">
-              <label htmlFor="oldPassword">Old Password</label>
+              <label htmlFor="oldPassword">Mật khẩu cũ</label>
               <div className="relative">
                 <input
                   onChange={(e) =>
@@ -134,7 +134,7 @@ const SettingComponent = () => {
               </div>
             </div>
             <div className="flex flex-col space-y-2">
-              <label htmlFor="newPassword">New Password</label>
+              <label htmlFor="newPassword">Mật khẩu mới</label>
               <input
                 onChange={(e) =>
                   setFdata({ ...fData, newPassword: e.target.value })
@@ -146,7 +146,7 @@ const SettingComponent = () => {
               />
             </div>
             <div className="flex flex-col space-y-2">
-              <label htmlFor="confirmPassword">Confirm Password</label>
+              <label htmlFor="confirmPassword">Nhập lại mật khẩu mới</label>
               <input
                 onChange={(e) =>
                   setFdata({ ...fData, confirmPassword: e.target.value })
@@ -162,7 +162,7 @@ const SettingComponent = () => {
               style={{ background: "#303031" }}
               className="w-full text-center cursor-pointer px-4 py-2 text-gray-100"
             >
-              Change password
+              Thay đổi mật khẩu
             </div>
           </div>
         </div>

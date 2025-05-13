@@ -49,7 +49,7 @@ const AdminNavber = (props) => {
             style={{ letterSpacing: "0.70rem" }}
             className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
           >
-            Ecommerce
+            HVN
           </span>
         </div>
         {/* Small Screen Show */}
@@ -74,7 +74,7 @@ const AdminNavber = (props) => {
             style={{ letterSpacing: "0.10rem" }}
             className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
           >
-            Ecommerce
+            HVN
           </span>
         </div>
         {/* Both Screen show */}

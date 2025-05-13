@@ -13,10 +13,10 @@ const Contact = () => {
             <strong>Địa chỉ:</strong> 123 Đường ABC, Quận 1, TP. Hồ Chí Minh
           </p>
           <p>
-            <strong>Điện thoại:</strong> (0123) 456-789
+            <strong>Điện thoại:</strong> 091 234 5678
           </p>
           <p>
-            <strong>Email:</strong> contact@ecommerce.com
+            <strong>Email:</strong> HVNbicycle@gmail.com
           </p>
           <h5 className="mt-4">Vị trí của chúng tôi</h5>
           <div className="map-container">

@@ -75,7 +75,7 @@ const Sidebar = (props) => {
                 : ""
             }  px-4 py-4 hover:bg-gray-200 cursor-pointer`}
           >
-            Cài đặt
+            Đổi mật khẩu
           </div>
           <hr />
           <div
