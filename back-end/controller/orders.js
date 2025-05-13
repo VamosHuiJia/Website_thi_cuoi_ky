@@ -1,6 +1,7 @@
 const orderModel = require("../models/orders");
 
 class Order {
+  // Lấy tất cả đơn hàng
   async getAllOrders(req, res) {
     try {
       let Orders = await orderModel
@@ -16,10 +17,11 @@ class Order {
     }
   }
 
+  // Lấy đơn hàng theo người dùng
   async getOrderByUser(req, res) {
     let { uId } = req.body;
     if (!uId) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tất cả phải được điền đầy đủ" });
     } else {
       try {
         let Order = await orderModel
@@ -36,6 +38,7 @@ class Order {
     }
   }
 
+  // Tạo đơn hàng mới
   async postCreateOrder(req, res) {
     let { allProduct, user, amount, transactionId, address, phone } = req.body;
     if (
@@ -46,7 +49,7 @@ class Order {
       !address ||
       !phone
     ) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tất cả phải được điền đầy đủ" });
     } else {
       try {
         let newOrder = new orderModel({
@@ -59,7 +62,7 @@ class Order {
         });
         let save = await newOrder.save();
         if (save) {
-          return res.json({ success: "Order created successfully" });
+          return res.json({ success: "Tạo đơn hàng thành công" });
         }
       } catch (err) {
         return res.json({ error: error });
@@ -67,10 +70,11 @@ class Order {
     }
   }
 
+  // Cập nhật đơn hàng
   async postUpdateOrder(req, res) {
     let { oId, status } = req.body;
     if (!oId || !status) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tất cả phải được điền đầy đủ" });
     } else {
       let currentOrder = orderModel.findByIdAndUpdate(oId, {
         status: status,
@@ -78,11 +82,12 @@ class Order {
       });
       currentOrder.exec((err, result) => {
         if (err) console.log(err);
-        return res.json({ success: "Order updated successfully" });
+        return res.json({ success: "Cập nhật đơn hàng thành công" });
       });
     }
   }
 
+  // Xóa đơn hàng
   async postDeleteOrder(req, res) {
     let { oId } = req.body;
     if (!oId) {
