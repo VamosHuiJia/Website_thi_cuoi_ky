@@ -37,19 +37,19 @@ const Navber = (props) => {
               className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
               onClick={(e) => history.push("/")}
             >
-              Shop
+              Cửa hàng
             </span>
             <span
               className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
               onClick={(e) => history.push("/blog")}
             >
-              Blog
+              Tin tức
             </span>
             <span
               className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
               onClick={(e) => history.push("/contact-us")}
             >
-              Contact us
+              Liên hệ
             </span>
           </div>
           <div className="col-span-2 lg:hidden flex justify-items-stretch	 items-center">
@@ -73,7 +73,7 @@ const Navber = (props) => {
               style={{ letterSpacing: "0.10rem" }}
               className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
             >
-              Ecommerce
+              HVN
             </span>
           </div>
           <div
@@ -81,7 +81,7 @@ const Navber = (props) => {
             style={{ letterSpacing: "0.70rem" }}
             className="hidden lg:block flex items-left col-span-1 text-center text-gray-800 font-bold tracking-widest uppercase text-2xl cursor-pointer"
           >
-            Ecommerce
+            HVN
           </div>
           <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
             {/*  WishList Page Button */}
@@ -153,7 +153,7 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>My Orders</span>
+                            <span>Đơn hàng</span>
                           </span>
                           <span
                             onClick={(e) => history.push("/user/profile")}
@@ -175,7 +175,7 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>My Account</span>
+                            <span>Tài khoản</span>
                           </span>
                           <span
                             onClick={(e) => history.push("/wish-list")}
@@ -197,7 +197,7 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>My Wishlist</span>
+                            <span>Yêu thích</span>
                           </span>
                           <span
                             onClick={(e) => history.push("/user/setting")}
@@ -225,7 +225,7 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>Setting</span>
+                            <span>Cài đặt</span>
                           </span>
                           <span
                             onClick={(e) => logout()}
@@ -247,7 +247,7 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>Logout</span>
+                            <span>Đăng xuất</span>
                           </span>
                         </li>
                       </Fragment>
@@ -280,7 +280,7 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>Admin Panel</span>
+                            <span>Trang quản lý</span>
                           </span>
                           <span
                             onClick={(e) => logout()}
@@ -302,7 +302,7 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>Logout</span>
+                            <span>Đăng xuất</span>
                           </span>
                         </li>
                       </Fragment>
@@ -371,19 +371,19 @@ const Navber = (props) => {
               className="font-medium text-lg tracking-widest hover:text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer"
               onClick={(e) => history.push("/")}
             >
-              Shop
+              Cửa hàng
             </span>
             <span
               className="font-medium text-lg tracking-widest hover:text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer"
               onClick={(e) => history.push("/blog")}
             >
-              Blog
+              Tin tức
             </span>
             <span
               className="font-medium text-lg tracking-widest hover:text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer"
               onClick={(e) => history.push("/contact-us")}
             >
-              Contact us
+              Liên hệ
             </span>
           </div>
         </div>

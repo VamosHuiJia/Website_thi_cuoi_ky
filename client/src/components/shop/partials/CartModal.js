@@ -120,7 +120,7 @@ const CartModal = () => {
                             <div>
                               {" "}
                               <span className="text-sm text-gray-400">
-                                Subtotoal :
+                                Subtotal :
                               </span>{" "}
                               ${subTotal(item._id, item.pPrice)}.00
                             </div>{" "}
