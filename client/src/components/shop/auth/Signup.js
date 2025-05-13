@@ -55,12 +55,12 @@ const Signup = ({ onSignupSuccess }) => {
 
   return (
     <Fragment>
-      <div className="text-center text-2xl mb-6">Register</div>
+      <div className="text-center text-2xl mb-6">ĐĂNG KÝ</div>
       <form className="space-y-4">
         {data.success ? alert(data.success, "green") : ""}
         <div className="flex flex-col">
           <label htmlFor="name">
-            Name<span className="text-sm text-gray-600 ml-1">*</span>
+            Nhập họ tên:<span className="text-sm text-gray-600 ml-1">*</span>
           </label>
           <input
             onChange={(e) =>
@@ -82,7 +82,7 @@ const Signup = ({ onSignupSuccess }) => {
         </div>
         <div className="flex flex-col">
           <label htmlFor="email">
-            Email address<span className="text-sm text-gray-600 ml-1">*</span>
+            Nhập email của bạn:<span className="text-sm text-gray-600 ml-1">*</span>
           </label>
           <input
             onChange={(e) =>
@@ -104,7 +104,7 @@ const Signup = ({ onSignupSuccess }) => {
         </div>
         <div className="flex flex-col">
           <label htmlFor="password">
-            Password<span className="text-sm text-gray-600 ml-1">*</span>
+            Nhập mật khẩu:<span className="text-sm text-gray-600 ml-1">*</span>
           </label>
           <input
             onChange={(e) =>
@@ -126,7 +126,7 @@ const Signup = ({ onSignupSuccess }) => {
         </div>
         <div className="flex flex-col">
           <label htmlFor="cPassword">
-            Confirm password
+            Nhập lại mật khẩu:
             <span className="text-sm text-gray-600 ml-1">*</span>
           </label>
           <input
@@ -155,11 +155,11 @@ const Signup = ({ onSignupSuccess }) => {
               className="px-4 py-2 focus:outline-none border mr-1"
             />
             <label htmlFor="rememberMe">
-              Remember me<span className="text-sm text-gray-600">*</span>
+              Nhớ thông tin<span className="text-sm text-gray-600">*</span>
             </label>
           </div>
           <a className="block text-gray-600" href="/">
-            Lost your password?
+            Quên mật khẩu?
           </a>
         </div>
         <div
@@ -167,7 +167,7 @@ const Signup = ({ onSignupSuccess }) => {
           style={{ background: "#303031" }}
           className="px-4 py-2 text-white text-center cursor-pointer font-medium"
         >
-          Create an account
+          Đăng ký
         </div>
       </form>
     </Fragment>
