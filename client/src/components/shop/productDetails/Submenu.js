@@ -14,7 +14,7 @@ const Submenu = (props) => {
               className="hover:text-yellow-700 cursor-pointer"
               onClick={(e) => history.push("/")}
             >
-              Shop
+              Cửa hàng
             </span>
             <span
               className="hover:text-yellow-700 cursor-pointer"

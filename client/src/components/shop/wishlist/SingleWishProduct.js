@@ -38,7 +38,7 @@ const Product = () => {
   if (loading) {
     return (
       <div className="my-32 text-2xl text-center">
-        No product found in wishList
+        Không có sản phẩm
       </div>
     );
   }
@@ -68,9 +68,9 @@ const Product = () => {
                     ${product.pPrice}.00
                   </div>
                   {product.pQuantity > 0 ? (
-                    <div className="text-green-500 my-1 md:my-0">In Stock</div>
+                    <div className="text-green-500 my-1 md:my-0">Còn hàng</div>
                   ) : (
-                    <div className="text-red-500 my-1 md:my-0">Out Stock</div>
+                    <div className="text-red-500 my-1 md:my-0">Hết hàng</div>
                   )}
 
                   <div
@@ -78,7 +78,7 @@ const Product = () => {
                     onClick={(e) => history.push(`/products/${product._id}`)}
                     className="inline-block px-4 py-2 text-white text-xs md:text-base text-center cursor-pointer hover:opacity-75"
                   >
-                    View
+                    Xem chi tiết
                   </div>
                 </div>
                 <div className="absolute top-0 right-0 mx-2 my-2 md:relative">
@@ -100,7 +100,7 @@ const Product = () => {
             );
           })
         ) : (
-          <div>No product found in wishList</div>
+          <div>Không có sản phẩm</div>
         )}
       </div>
     </Fragment>
@@ -111,7 +111,7 @@ const SingleWishProduct = (props) => {
   return (
     <Fragment>
       <section className="mx-4 mt-20 md:mx-12 md:mt-32 lg:mt-24">
-        <div className="text-2xl mx-2 mb-6">Wishlist</div>
+        <div className="text-2xl mx-2 mb-6">Yêu thích</div>
         {/* Product List */}
         <Product />
       </section>
