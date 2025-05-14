@@ -47,7 +47,7 @@ const SettingComponent = () => {
       <div className="flex flex-col w-full my-4 md:my-0 md:w-9/12 md:px-8">
         <div className="shadow-lg border">
           <div className="py-4 px-4 text-lg font-semibold border-t-2 border-yellow-700">
-            Change Password
+            Thay đổi mật khẩu
           </div>
           <hr />
           <div className="py-4 px-4 md:px-8 lg:px-16 flex flex-col space-y-4">

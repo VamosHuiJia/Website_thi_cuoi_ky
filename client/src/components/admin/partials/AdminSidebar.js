@@ -36,7 +36,7 @@ const AdminSidebar = (props) => {
               />
             </svg>
           </span>
-          <span className="hover:text-gray-800">Dashboard</span>
+          <span className="hover:text-gray-800">Tổng quan</span>
         </div>
         <hr className="border-b border-gray-200" />
         <div
