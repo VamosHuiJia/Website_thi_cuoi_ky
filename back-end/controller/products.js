@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 class Product {
-  // Delete Image from uploads -> products folder
+  // Hàm tĩnh để xóa ảnh
   static deleteImages(images, mode) {
     var basePath =
       path.resolve(__dirname + "../../") + "/public/uploads/products/";
@@ -17,7 +17,7 @@ class Product {
       }
       console.log(filePath);
       if (fs.existsSync(filePath)) {
-        console.log("Exists image");
+        console.log("Hình ảnh đã tồn tại");
       }
       fs.unlink(filePath, (err) => {
         if (err) {
@@ -27,6 +27,7 @@ class Product {
     }
   }
 
+  // Lấy danh sách tất cả sản phẩm
   async getAllProduct(req, res) {
     try {
       let Products = await productModel
@@ -41,11 +42,12 @@ class Product {
     }
   }
 
+  // Thêm sản phẩm mới
   async postAddProduct(req, res) {
     let { pName, pDescription, pPrice, pQuantity, pCategory, pOffer, pStatus } =
       req.body;
     let images = req.files;
-    // Validation
+    // Kiểm tra rỗng
     if (
       !pName |
       !pDescription |
@@ -56,19 +58,19 @@ class Product {
       !pStatus
     ) {
       Product.deleteImages(images, "file");
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải được điền đầy đủ" });
     }
-    // Validate Name and description
+    // Kiểm tra độ dài
     else if (pName.length > 255 || pDescription.length > 3000) {
       Product.deleteImages(images, "file");
       return res.json({
-        error: "Name 255 & Description must not be 3000 charecter long",
+        error: "Tên không quá 255 ký tự & Mô tả không được dài quá 3000 ký tự",
       });
     }
-    // Validate Images
+    // Kiểm tra ảnh
     else if (images.length !== 2) {
       Product.deleteImages(images, "file");
-      return res.json({ error: "Must need to provide 2 images" });
+      return res.json({ error: "Phải cung cấp 2 hình ảnh" });
     } else {
       try {
         let allImages = [];
@@ -87,7 +89,7 @@ class Product {
         });
         let save = await newProduct.save();
         if (save) {
-          return res.json({ success: "Product created successfully" });
+          return res.json({ success: "Sản phẩm được tạo thành công" });
         }
       } catch (err) {
         console.log(err);
@@ -95,6 +97,7 @@ class Product {
     }
   }
 
+  // Sửa sản phẩm
   async postEditProduct(req, res) {
     let {
       pId,
@@ -109,7 +112,7 @@ class Product {
     } = req.body;
     let editImages = req.files;
 
-    // Validate other fileds
+    // Kiểm tra rỗng
     if (
       !pId |
       !pName |
@@ -120,18 +123,18 @@ class Product {
       !pOffer |
       !pStatus
     ) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải được yêu cầu" });
     }
-    // Validate Name and description
+    // Kiểm tra độ dài
     else if (pName.length > 255 || pDescription.length > 3000) {
       return res.json({
-        error: "Name 255 & Description must not be 3000 charecter long",
+        error: "Tên không quá 255 ký tự & Mô tả không được dài quá 3000 ký tự",
       });
     }
-    // Validate Update Images
+    // Kiểm tra ảnh
     else if (editImages && editImages.length == 1) {
       Product.deleteImages(editImages, "file");
-      return res.json({ error: "Must need to provide 2 images" });
+      return res.json({ error: "Phải cung cấp 2 hình ảnh" });
     } else {
       let editData = {
         pName,
@@ -154,7 +157,7 @@ class Product {
         let editProduct = productModel.findByIdAndUpdate(pId, editData);
         editProduct.exec((err) => {
           if (err) console.log(err);
-          return res.json({ success: "Product edit successfully" });
+          return res.json({ success: "Sản phẩm được tạo thành công" });
         });
       } catch (err) {
         console.log(err);
@@ -162,6 +165,7 @@ class Product {
     }
   }
 
+  // Xóa sản phẩm
   async getDeleteProduct(req, res) {
     let { pId } = req.body;
     if (!pId) {
@@ -181,6 +185,7 @@ class Product {
     }
   }
 
+  // Lấy thông tin chi tiết một sản phẩm
   async getSingleProduct(req, res) {
     let { pId } = req.body;
     if (!pId) {
@@ -200,6 +205,7 @@ class Product {
     }
   }
 
+  // Lọc sản phẩm theo danh mục
   async getProductByCategory(req, res) {
     let { catId } = req.body;
     if (!catId) {
@@ -218,6 +224,7 @@ class Product {
     }
   }
 
+  // Lọc sản phẩm theo giá
   async getProductByPrice(req, res) {
     let { price } = req.body;
     if (!price) {
@@ -237,6 +244,7 @@ class Product {
     }
   }
 
+  // Lấy sản phẩm trong danh sách yêu thích
   async getWishProduct(req, res) {
     let { productArray } = req.body;
     if (!productArray) {
@@ -255,6 +263,7 @@ class Product {
     }
   }
 
+  // Lấy sản phẩm trong giỏ hàng
   async getCartProduct(req, res) {
     let { productArray } = req.body;
     if (!productArray) {
@@ -273,6 +282,10 @@ class Product {
     }
   }
 
+
+
+  //============================================== Lỗi ============================================== //
+  // Lỗi 
   async postAddReview(req, res) {
     let { pId, uId, rating, review } = req.body;
     if (!pId || !rating || !review || !uId) {
@@ -325,6 +338,7 @@ class Product {
     }
   }
 
+  //Lỗi 
   async deleteReview(req, res) {
     let { rId, pId } = req.body;
     if (!rId) {
@@ -346,6 +360,9 @@ class Product {
     }
   }
 }
+
+
+
 
 const productController = new Product();
 module.exports = productController;
