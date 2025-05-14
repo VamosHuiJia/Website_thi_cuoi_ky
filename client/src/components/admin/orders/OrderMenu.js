@@ -28,7 +28,7 @@ const OrderMenu = (props) => {
               >
                 <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
               </svg>
-              <span className="pr-2">Filter</span>
+              <span className="pr-2">Bộ lọc</span>
             </div>
             <div
               style={{ background: "#303031" }}
@@ -42,7 +42,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                All
+                Tất cả
               </span>
               <span
                 onClick={(e) =>
@@ -56,7 +56,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                Not processed
+                Chưa được xử lý
               </span>
               <span
                 onClick={(e) =>
@@ -70,7 +70,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                Processing
+                Đang xử lý
               </span>
               <span
                 onClick={(e) =>
@@ -78,7 +78,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                Shipped
+                Đã vận chuyển
               </span>
               <span
                 onClick={(e) =>
@@ -92,7 +92,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                Delivered
+                Đã giao hàng
               </span>
               <span
                 onClick={(e) =>
@@ -106,7 +106,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                Cancelled
+                Đã hủy
               </span>
             </div>
           </div>

@@ -63,7 +63,7 @@ const AdminSidebar = (props) => {
               />
             </svg>
           </span>
-          <span className="hover:text-gray-800">Categories</span>
+          <span className="hover:text-gray-800">Danh mục</span>
         </div>
         <hr className="border-b border-gray-200" />
         <div
@@ -90,7 +90,7 @@ const AdminSidebar = (props) => {
               />
             </svg>
           </span>
-          <span className="hover:text-gray-800">Product</span>
+          <span className="hover:text-gray-800">Sản phẩm</span>
         </div>
         <hr className="border-b border-gray-200" />
         <div
@@ -117,7 +117,7 @@ const AdminSidebar = (props) => {
               />
             </svg>
           </span>
-          <span className="hover:text-gray-800">Order</span>
+          <span className="hover:text-gray-800">Đơn hàng</span>
         </div>
         <hr className="border-b border-gray-200" />
       </div>

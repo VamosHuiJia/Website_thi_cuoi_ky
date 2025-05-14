@@ -58,7 +58,7 @@ const UpdateOrderModal = (props) => {
         <div className="relative bg-white w-11/12 md:w-3/6 shadow-lg flex flex-col items-center space-y-4  overflow-y-auto px-4 py-4 md:px-8">
           <div className="flex items-center justify-between w-full pt-4">
             <span className="text-left font-semibold text-2xl tracking-wider">
-              Update Order
+              Cập nhật đơn hàng
             </span>
             {/* Close Modal */}
             <span
@@ -83,7 +83,7 @@ const UpdateOrderModal = (props) => {
             </span>
           </div>
           <div className="flex flex-col space-y-1 w-full">
-            <label htmlFor="status">Order Status</label>
+            <label htmlFor="status">Trạng thái đơn hàng</label>
             <select
               value={status}
               name="status"
@@ -92,19 +92,19 @@ const UpdateOrderModal = (props) => {
               id="status"
             >
               <option name="status" value="Not processed">
-                Not processed
+                Chưa xử lý
               </option>
               <option name="status" value="Processing">
-                Processing
+                Đang xử lý
               </option>
               <option name="status" value="Shipped">
-                Shipped
+                Đã vận chuyển
               </option>
               <option name="status" value="Delivered">
-                Delivered
+                Đã giao hàng
               </option>
               <option name="status" value="Cancelled">
-                Cancelled
+                Đã hủy
               </option>
             </select>
           </div>
@@ -114,7 +114,7 @@ const UpdateOrderModal = (props) => {
               onClick={(e) => submitForm()}
               className="rounded-full bg-gray-800 text-gray-100 text-lg font-medium py-2"
             >
-              Update category
+              Cập nhật 
             </button>
           </div>
         </div>

@@ -133,7 +133,7 @@ const FilterList = () => {
               type="range"
               id="points"
               min="300000"
-              max="100000000"
+              max="50000000"
               step="100000"
               onChange={(e) => rangeHandle(e)}
             />

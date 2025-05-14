@@ -42,7 +42,7 @@ export const CheckoutComponent = (props) => {
             d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
           ></path>
         </svg>
-        Please wait untill finish
+        Vui lòng đợi
       </div>
     );
   }
@@ -148,20 +148,20 @@ const CheckoutProducts = ({ products }) => {
                     {product.pName}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Price : ${product.pPrice}.00{" "}
+                    Giá : {product.pPrice}.đ{" "}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Quantitiy : {quantity(product._id)}
+                    Số lượng : {quantity(product._id)}
                   </div>
                   <div className="font-semibold text-gray-600 text-sm">
-                    Subtotal : ${subTotal(product._id, product.pPrice)}.00
+                    Tổng : {subTotal(product._id, product.pPrice)}đ
                   </div>
                 </div>
               </div>
             );
           })
         ) : (
-          <div>No product found for checkout</div>
+          <div>Không có sản phẩm</div>
         )}
       </div>
     </Fragment>

@@ -99,7 +99,7 @@ const AddCategoryModal = (props) => {
         <div className="relative bg-white w-12/12 md:w-3/6 shadow-lg flex flex-col items-center space-y-4  overflow-y-auto px-4 py-4 md:px-8">
           <div className="flex items-center justify-between w-full pt-4">
             <span className="text-left font-semibold text-2xl tracking-wider">
-              Add Category
+              Thêm danh mục
             </span>
             {/* Close Modal */}
             <span
@@ -129,7 +129,7 @@ const AddCategoryModal = (props) => {
           {fData.success ? alert(fData.success, "green") : ""}
           <form className="w-full" onSubmit={(e) => submitForm(e)}>
             <div className="flex flex-col space-y-1 w-full py-4">
-              <label htmlFor="name">Category Name</label>
+              <label htmlFor="name">Tên danh mục</label>
               <input
                 onChange={(e) =>
                   setFdata({
@@ -145,7 +145,7 @@ const AddCategoryModal = (props) => {
               />
             </div>
             <div className="flex flex-col space-y-1 w-full">
-              <label htmlFor="description">Category Description</label>
+              <label htmlFor="description">Mô tả</label>
               <textarea
                 onChange={(e) =>
                   setFdata({
@@ -165,7 +165,7 @@ const AddCategoryModal = (props) => {
             </div>
             {/* Image Field & function */}
             <div className="flex flex-col space-y-1 w-full">
-              <label htmlFor="name">Category Image</label>
+              <label htmlFor="name">Hình ảnh</label>
               <input
                 accept=".jpg, .jpeg, .png"
                 onChange={(e) => {
@@ -181,7 +181,7 @@ const AddCategoryModal = (props) => {
               />
             </div>
             <div className="flex flex-col space-y-1 w-full">
-              <label htmlFor="status">Category Status</label>
+              <label htmlFor="status">Trạng thái</label>
               <select
                 name="status"
                 onChange={(e) =>
@@ -196,10 +196,10 @@ const AddCategoryModal = (props) => {
                 id="status"
               >
                 <option name="status" value="Active">
-                  Active
+                  Còn hàng
                 </option>
                 <option name="status" value="Disabled">
-                  Disabled
+                  Hết hàng
                 </option>
               </select>
             </div>
@@ -209,7 +209,7 @@ const AddCategoryModal = (props) => {
                 type="submit"
                 className="bg-gray-800 text-gray-100 rounded-full text-lg font-medium py-2"
               >
-                Create category
+                Tạo danh mục
               </button>
             </div>
           </form>

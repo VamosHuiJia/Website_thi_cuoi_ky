@@ -175,7 +175,7 @@ const CartModal = () => {
                       cartModalOpen();
                     }}
                   >
-                    Thanh toán ${data.cartTotalCost}.00
+                    Thanh toán: {data.cartTotalCost}đ
                   </div>
                 ) : (
                   <div
@@ -193,7 +193,7 @@ const CartModal = () => {
                       });
                     }}
                   >
-                    Thanh toán ${data.cartTotalCost}.00
+                    Thanh toán: {data.cartTotalCost}đ
                   </div>
                 )}
               </Fragment>
