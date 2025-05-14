@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../config/keys");
 const userModel = require("../models/users");
 
+// Kiểm tra xem người dùng đã đăng nhập chưa
 exports.loginCheck = (req, res, next) => {
   try {
     let token = req.headers.token;
@@ -11,11 +12,12 @@ exports.loginCheck = (req, res, next) => {
     next();
   } catch (err) {
     res.json({
-      error: "You must be logged in",
+      error: "Bạn phải đăng nhập",
     });
   }
 };
 
+// Kiểm tra xem người dùng có được xác thực
 exports.isAuth = (req, res, next) => {
   let { loggedInUserId } = req.body;
   if (
@@ -23,17 +25,18 @@ exports.isAuth = (req, res, next) => {
     !req.userDetails._id ||
     loggedInUserId != req.userDetails._id
   ) {
-    res.status(403).json({ error: "You are not authenticate" });
+    res.status(403).json({ error: "Bạn chưa xác thực" });
   }
   next();
 };
 
+// Kiểm tra phân quyền
 exports.isAdmin = async (req, res, next) => {
   try {
     let reqUser = await userModel.findById(req.body.loggedInUserId);
-    // If user role 0 that's mean not admin it's customer
+    
     if (reqUser.userRole === 0) {
-      res.status(403).json({ error: "Access denied" });
+      res.status(403).json({ error: "Quyền truy cập bị từ chối" });
     }
     next();
   } catch {

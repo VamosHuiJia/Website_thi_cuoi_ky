@@ -123,7 +123,7 @@ class Product {
       !pOffer |
       !pStatus
     ) {
-      return res.json({ error: "Tất cả phải được yêu cầu" });
+      return res.json({ error: "Tất cả phải điền đầy đủ" });
     }
     // Kiểm tra độ dài
     else if (pName.length > 255 || pDescription.length > 3000) {
@@ -169,15 +169,14 @@ class Product {
   async getDeleteProduct(req, res) {
     let { pId } = req.body;
     if (!pId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải điền đầy đủ" });
     } else {
       try {
         let deleteProductObj = await productModel.findById(pId);
         let deleteProduct = await productModel.findByIdAndDelete(pId);
         if (deleteProduct) {
-          // Delete Image from uploads -> products folder
           Product.deleteImages(deleteProductObj.pImages, "string");
-          return res.json({ success: "Product deleted successfully" });
+          return res.json({ success: "Xóa sản phẩm thành công" });
         }
       } catch (err) {
         console.log(err);
@@ -189,7 +188,7 @@ class Product {
   async getSingleProduct(req, res) {
     let { pId } = req.body;
     if (!pId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải điền đầy đủ" });
     } else {
       try {
         let singleProduct = await productModel
@@ -209,7 +208,7 @@ class Product {
   async getProductByCategory(req, res) {
     let { catId } = req.body;
     if (!catId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải điền đầy đủ" });
     } else {
       try {
         let products = await productModel
@@ -219,7 +218,7 @@ class Product {
           return res.json({ Products: products });
         }
       } catch (err) {
-        return res.json({ error: "Search product wrong" });
+        return res.json({ error: "Lỗi tìm sản phẩm" });
       }
     }
   }
@@ -228,7 +227,7 @@ class Product {
   async getProductByPrice(req, res) {
     let { price } = req.body;
     if (!price) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải điền đầy đủ" });
     } else {
       try {
         let products = await productModel
@@ -239,7 +238,7 @@ class Product {
           return res.json({ Products: products });
         }
       } catch (err) {
-        return res.json({ error: "Filter product wrong" });
+        return res.json({ error: "Lỗi lọc sản phẩm" });
       }
     }
   }
@@ -248,7 +247,7 @@ class Product {
   async getWishProduct(req, res) {
     let { productArray } = req.body;
     if (!productArray) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải được điền đầy đủd" });
     } else {
       try {
         let wishProducts = await productModel.find({

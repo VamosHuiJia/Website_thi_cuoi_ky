@@ -82,7 +82,7 @@ const AddProductDetail = ({ categories }) => {
         <div className="h-full overflow-auto mt-32 md:mt-0 relative bg-white w-11/12 md:w-3/6 shadow-lg flex flex-col items-center space-y-4 px-4 py-4 md:px-8">
           <div className="flex items-center justify-between w-full pt-4">
             <span className="text-left font-semibold text-2xl tracking-wider">
-              Add Product
+              Thêm sản phẩm
             </span>
             {/* Close Modal */}
             <span
@@ -113,7 +113,7 @@ const AddProductDetail = ({ categories }) => {
           <form className="w-full" onSubmit={(e) => submitForm(e)}>
             <div className="flex space-x-1 py-4">
               <div className="w-1/2 flex flex-col space-y-1 space-x-1">
-                <label htmlFor="name">Product Name *</label>
+                <label htmlFor="name">Tên sản phẩm *</label>
                 <input
                   value={fData.pName}
                   onChange={(e) =>
@@ -129,7 +129,7 @@ const AddProductDetail = ({ categories }) => {
                 />
               </div>
               <div className="w-1/2 flex flex-col space-y-1 space-x-1">
-                <label htmlFor="price">Product Price *</label>
+                <label htmlFor="price">Giá *</label>
                 <input
                   value={fData.pPrice}
                   onChange={(e) =>
@@ -147,7 +147,7 @@ const AddProductDetail = ({ categories }) => {
               </div>
             </div>
             <div className="flex flex-col space-y-2">
-              <label htmlFor="description">Product Description *</label>
+              <label htmlFor="description">Mô tả *</label>
               <textarea
                 value={fData.pDescription}
                 onChange={(e) =>
@@ -167,8 +167,8 @@ const AddProductDetail = ({ categories }) => {
             </div>
             {/* Most Important part for uploading multiple image */}
             <div className="flex flex-col mt-4">
-              <label htmlFor="image">Product Images *</label>
-              <span className="text-gray-600 text-xs">Must need 2 images</span>
+              <label htmlFor="image">Hình ảnh *</label>
+              <span className="text-gray-600 text-xs">Cần 2 hình ảnh</span>
               <input
                 onChange={(e) =>
                   setFdata({
@@ -188,7 +188,7 @@ const AddProductDetail = ({ categories }) => {
             {/* Most Important part for uploading multiple image */}
             <div className="flex space-x-1 py-4">
               <div className="w-1/2 flex flex-col space-y-1">
-                <label htmlFor="status">Product Status *</label>
+                <label htmlFor="status">Trạng thái *</label>
                 <select
                   value={fData.pStatus}
                   onChange={(e) =>
@@ -204,15 +204,15 @@ const AddProductDetail = ({ categories }) => {
                   id="status"
                 >
                   <option name="status" value="Active">
-                    Active
+                    Kích hoạt
                   </option>
                   <option name="status" value="Disabled">
-                    Disabled
+                    Không kích hoạt
                   </option>
                 </select>
               </div>
               <div className="w-1/2 flex flex-col space-y-1">
-                <label htmlFor="status">Product Category *</label>
+                <label htmlFor="status">Danh mục *</label>
                 <select
                   value={fData.pCategory}
                   onChange={(e) =>
@@ -228,7 +228,7 @@ const AddProductDetail = ({ categories }) => {
                   id="status"
                 >
                   <option disabled value="">
-                    Select a category
+                    Chọn danh mục *
                   </option>
                   {categories.length > 0
                     ? categories.map(function (elem) {
@@ -244,7 +244,7 @@ const AddProductDetail = ({ categories }) => {
             </div>
             <div className="flex space-x-1 py-4">
               <div className="w-1/2 flex flex-col space-y-1">
-                <label htmlFor="quantity">Product in Stock *</label>
+                <label htmlFor="quantity">Trong kho *</label>
                 <input
                   value={fData.pQuantity}
                   onChange={(e) =>
@@ -261,7 +261,7 @@ const AddProductDetail = ({ categories }) => {
                 />
               </div>
               <div className="w-1/2 flex flex-col space-y-1">
-                <label htmlFor="offer">Product Offfer (%) *</label>
+                <label htmlFor="offer">Giảm giá (%) *</label>
                 <input
                   value={fData.pOffer}
                   onChange={(e) =>
@@ -284,7 +284,7 @@ const AddProductDetail = ({ categories }) => {
                 type="submit"
                 className="rounded-full bg-gray-800 text-gray-100 text-lg font-medium py-2"
               >
-                Create product
+                Xác nhận
               </button>
             </div>
           </form>

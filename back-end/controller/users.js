@@ -20,7 +20,7 @@ class User {
   async getSingleUser(req, res) {
     let { uId } = req.body;
     if (!uId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải được điền đầy đủ" });
     } else {
       try {
         let User = await userModel
@@ -45,7 +45,7 @@ class User {
       !address ||
       !phone
     ) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tất cả phải được điền đầy đủ" });
     } else {
       try {
         let newUser = new userModel({
@@ -58,7 +58,7 @@ class User {
         });
         let save = await newUser.save();
         if (save) {
-          return res.json({ success: "User created successfully" });
+          return res.json({ success: " Tạo người dùng thành công" });
         }
       } catch (err) {
         return res.json({ error: error });
@@ -69,7 +69,7 @@ class User {
   async postEditUser(req, res) {
     let { uId, name, phoneNumber } = req.body;
     if (!uId || !name || !phoneNumber) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tất cả phải được điền đầy đủ" });
     } else {
       let currentUser = userModel.findByIdAndUpdate(uId, {
         name: name,
@@ -78,7 +78,7 @@ class User {
       });
       currentUser.exec((err, result) => {
         if (err) console.log(err);
-        return res.json({ success: "User updated successfully" });
+        return res.json({ success: "Cập nhật người dùng thành công" });
       });
     }
   }
@@ -86,7 +86,7 @@ class User {
   async getDeleteUser(req, res) {
     let { oId, status } = req.body;
     if (!oId || !status) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tất cả phải được điền đầy đủ" });
     } else {
       let currentUser = userModel.findByIdAndUpdate(oId, {
         status: status,
@@ -94,7 +94,7 @@ class User {
       });
       currentUser.exec((err, result) => {
         if (err) console.log(err);
-        return res.json({ success: "User updated successfully" });
+        return res.json({ success: "Xóa người dùng thành công" });
       });
     }
   }
@@ -102,12 +102,12 @@ class User {
   async changePassword(req, res) {
     let { uId, oldPassword, newPassword } = req.body;
     if (!uId || !oldPassword || !newPassword) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tất cả phải được điền đầy đủ" });
     } else {
       const data = await userModel.findOne({ _id: uId });
       if (!data) {
         return res.json({
-          error: "Invalid user",
+          error: "Người dùng không hợp lệ",
         });
       } else {
         const oldPassCheck = await bcrypt.compare(oldPassword, data.password);
@@ -118,11 +118,11 @@ class User {
           });
           passChange.exec((err, result) => {
             if (err) console.log(err);
-            return res.json({ success: "Password updated successfully" });
+            return res.json({ success: "Đã cập nhật mật khẩu thành công" });
           });
         } else {
           return res.json({
-            error: "Your old password is wrong!!",
+            error: "Mật khẩu cũ của bạn sai!!",
           });
         }
       }

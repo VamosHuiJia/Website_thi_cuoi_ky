@@ -62,7 +62,7 @@ const SellTable = () => {
           </tbody>
         </table>
         <div className="text-sm text-gray-600 mt-2">
-          Tổngc cộng {" "}
+          Tổng cộng:  {" "}
           {data.totalOrders.Orders !== undefined ? ordersList().length : 0}{" "}
           đơn đặt hàng được tìm thấy
         </div>

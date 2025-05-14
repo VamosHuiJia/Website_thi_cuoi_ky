@@ -30,7 +30,7 @@ const CategoryMenu = (props) => {
                 clipRule="evenodd"
               />
             </svg>
-            Add Category
+            Thêm danh mục
           </div>
         </div>
         <AddCategoryModal />

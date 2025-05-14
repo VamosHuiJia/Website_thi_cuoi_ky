@@ -3,6 +3,7 @@ const router = express.Router();
 const productController = require("../controller/products");
 const multer = require("multer");
 
+// // Thiết lập lưu trữ ảnh
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "public/uploads/products");
