@@ -91,12 +91,12 @@ class Order {
   async postDeleteOrder(req, res) {
     let { oId } = req.body;
     if (!oId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải được điền đầy đủ" });
     } else {
       try {
         let deleteOrder = await orderModel.findByIdAndDelete(oId);
         if (deleteOrder) {
-          return res.json({ success: "Order deleted successfully" });
+          return res.json({ success: "Xóa đơn hàng thành công" });
         }
       } catch (error) {
         console.log(error);

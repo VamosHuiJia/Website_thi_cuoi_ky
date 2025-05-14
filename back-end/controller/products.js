@@ -247,7 +247,7 @@ class Product {
   async getWishProduct(req, res) {
     let { productArray } = req.body;
     if (!productArray) {
-      return res.json({ error: "Tất cả phải được điền đầy đủd" });
+      return res.json({ error: "Tất cả phải được điền đầy đủ" });
     } else {
       try {
         let wishProducts = await productModel.find({
@@ -257,7 +257,7 @@ class Product {
           return res.json({ Products: wishProducts });
         }
       } catch (err) {
-        return res.json({ error: "Filter product wrong" });
+        return res.json({ error: "Bộ lọc sai" });
       }
     }
   }
@@ -266,7 +266,7 @@ class Product {
   async getCartProduct(req, res) {
     let { productArray } = req.body;
     if (!productArray) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải được điền đầy đủd" });
     } else {
       try {
         let cartProducts = await productModel.find({
@@ -276,7 +276,7 @@ class Product {
           return res.json({ Products: cartProducts });
         }
       } catch (err) {
-        return res.json({ error: "Cart product wrong" });
+        return res.json({ error: "Lỗi giỏ hàng" });
       }
     }
   }
@@ -288,13 +288,13 @@ class Product {
   async postAddReview(req, res) {
     let { pId, uId, rating, review } = req.body;
     if (!pId || !rating || !review || !uId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tất cả phải được điền đầy đủ" });
     } else {
       let checkReviewRatingExists = await productModel.findOne({ _id: pId });
       if (checkReviewRatingExists.pRatingsReviews.length > 0) {
         checkReviewRatingExists.pRatingsReviews.map((item) => {
           if (item.user === uId) {
-            return res.json({ error: "Your already reviewd the product" });
+            return res.json({ error: "Bạn đã đánh giá sản phẩm" });
           } else {
             try {
               let newRatingReview = productModel.findByIdAndUpdate(pId, {
@@ -310,10 +310,10 @@ class Product {
                 if (err) {
                   console.log(err);
                 }
-                return res.json({ success: "Thanks for your review" });
+                return res.json({ success: "Cảm ơn đánh giá của bạn" });
               });
             } catch (err) {
-              return res.json({ error: "Cart product wrong" });
+              return res.json({ error: "Giỏ hàng lỗi" });
             }
           }
         });
@@ -328,10 +328,10 @@ class Product {
             if (err) {
               console.log(err);
             }
-            return res.json({ success: "Thanks for your review" });
+            return res.json({ success: "Cảm ơn đánh giá của bạn" });
           });
         } catch (err) {
-          return res.json({ error: "Cart product wrong" });
+          return res.json({ error: "Giỏ hàng lỗi" });
         }
       }
     }
@@ -341,7 +341,7 @@ class Product {
   async deleteReview(req, res) {
     let { rId, pId } = req.body;
     if (!rId) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tất cả phải được điền đầy đủ" });
     } else {
       try {
         let reviewDelete = productModel.findByIdAndUpdate(pId, {
@@ -351,7 +351,7 @@ class Product {
           if (err) {
             console.log(err);
           }
-          return res.json({ success: "Your review is deleted" });
+          return res.json({ success: "Đã xóa đánh giá" });
         });
       } catch (err) {
         console.log(err);
@@ -359,8 +359,6 @@ class Product {
     }
   }
 }
-
-
 
 
 const productController = new Product();
