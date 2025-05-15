@@ -208,7 +208,7 @@ const Search = () => {
         onChange={(e) => searchHandle(e)}
         className="px-4 text-xl py-4 focus:outline-none"
         type="text"
-        placeholder="Search products..."
+        placeholder="Nhập ở đây "
       />
       <div onClick={(e) => closeSearchBar()} className="cursor-pointer">
         <svg

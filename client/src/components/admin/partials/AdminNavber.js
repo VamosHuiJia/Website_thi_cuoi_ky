@@ -77,7 +77,7 @@ const AdminNavber = (props) => {
             HVN
           </span>
         </div>
-        {/* Both Screen show */}
+        {/* Chưa làm :(((*/}
         <div className="flex items-center">
           <div
             onClick={() => {
@@ -127,7 +127,7 @@ const AdminNavber = (props) => {
               />
             </svg>
           </div>
-          {/* Logout Button Dropdown */}
+          {/* Đăng xuất */}
           <div
             className="userDropdownBtn hover:bg-gray-200 px-2 py-2 rounded-lg relative"
             title="Logout"
