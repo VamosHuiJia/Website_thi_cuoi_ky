@@ -48,7 +48,7 @@ const LoginSignup = (props) => {
           {login ? <Login /> : <Signup onSignupSuccess={handleSignupSuccess} />}
           <div className="flex items-center space-x-2">
             <span className="border-b border-gray-500 w-full" />
-            <span className="font-medium">or</span>
+            <span className="font-medium">Hoặc</span>
             <span className="border-b border-gray-500 w-full" />
           </div>
           <div
