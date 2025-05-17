@@ -32,10 +32,10 @@ mongoose
   })
   .then(() =>
     console.log(
-      "==============Mongodb Database Connected Successfully=============="
+      "Kết nối okela nhé bạn ơi"
     )
   )
-  .catch((err) => console.log("Database Not Connected !!!"));
+  .catch((err) => console.log("Thất bại rồi huhu !!!"));
 
 // Middleware
 app.use(morgan("dev"));
