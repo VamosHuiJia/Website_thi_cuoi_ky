@@ -31,14 +31,13 @@ const LoginSignup = (props) => {
 
   return (
     <Fragment>
-      {/* Black Overlay  */}
       <div
         onClick={(e) => loginSignupModalToggle()}
         className={` ${
           data.loginSignupModal ? "" : "hidden"
         } fixed top-0 z-40 w-full h-screen bg-black opacity-50 cursor-pointer`}
       ></div>
-      {/* Signup Login Component Render */}
+      {/* Đăng nhập / Đăng ký */}
       <section
         className={` ${
           data.loginSignupModal ? "" : "hidden"
@@ -58,7 +57,7 @@ const LoginSignup = (props) => {
           >
             {loginValue}
           </div>
-          {/*  Modal Close Button */}
+          {/*  Đóng */}
           <div className="absolute top-0 right-0 mx-4">
             <svg
               onClick={(e) => {

@@ -7,7 +7,7 @@ import { getSingleProduct } from "./FetchApi";
 
 const ReviewForm = (props) => {
   const { data, dispatch } = useContext(LayoutContext);
-  let { id } = useParams(); // Product Id
+  let { id } = useParams(); 
 
   const [fData, setFdata] = useState({
     rating: "",
@@ -63,7 +63,7 @@ const ReviewForm = (props) => {
               Hãy để lại cho chúng tôi dánh giá *
             </span>
           </div>
-          {/* Input Rating */}
+        
           <div className="mb-4">
             <fieldset
               onChange={(e) => setFdata({ ...fData, rating: e.target.value })}
@@ -127,7 +127,7 @@ const ReviewForm = (props) => {
               />
             </fieldset>
           </div>
-          {/* Review Form */}
+         
           <div className="space-y-4">
             <div className="flex flex-col">
               <label htmlFor="textArea">

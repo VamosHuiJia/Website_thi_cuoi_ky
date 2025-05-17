@@ -95,7 +95,6 @@ const OrdersComponent = () => {
 
   useEffect(() => {
     fetchOrderByUser(dispatch);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (data.loading) {

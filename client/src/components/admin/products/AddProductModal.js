@@ -64,16 +64,16 @@ const AddProductDetail = ({ categories }) => {
 
   return (
     <Fragment>
-      {/* Black Overlay */}
+  
       <div
         onClick={(e) => dispatch({ type: "addProductModal", payload: false })}
         className={`${
           data.addProductModal ? "" : "hidden"
         } fixed top-0 left-0 z-30 w-full h-full bg-black opacity-50`}
       />
-      {/* End Black Overlay */}
+     
 
-      {/* Modal Start */}
+      
       <div
         className={`${
           data.addProductModal ? "" : "hidden"
@@ -165,7 +165,7 @@ const AddProductDetail = ({ categories }) => {
                 rows={2}
               />
             </div>
-            {/* Most Important part for uploading multiple image */}
+            
             <div className="flex flex-col mt-4">
               <label htmlFor="image">Hình ảnh *</label>
               <span className="text-gray-600 text-xs">Cần 2 hình ảnh</span>
@@ -185,7 +185,7 @@ const AddProductDetail = ({ categories }) => {
                 multiple
               />
             </div>
-            {/* Most Important part for uploading multiple image */}
+         
             <div className="flex space-x-1 py-4">
               <div className="w-1/2 flex flex-col space-y-1">
                 <label htmlFor="status">Trạng thái *</label>

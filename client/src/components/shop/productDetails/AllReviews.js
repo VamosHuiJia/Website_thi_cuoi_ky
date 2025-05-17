@@ -11,7 +11,7 @@ import { getSingleProduct } from "./FetchApi";
 const AllReviews = (props) => {
   const { data, dispatch } = useContext(LayoutContext);
   const { pRatingsReviews } = data.singleProductDetail;
-  let { id } = useParams(); // Prodduct Id
+  let { id } = useParams(); 
 
   const [fData, setFdata] = useState({
     success: false,
@@ -46,7 +46,7 @@ const AllReviews = (props) => {
         {fData.success ? Alert("red", fData.success) : ""}
       </div>
       <div className="mt-6 mb-12 md:mx-16 lg:mx-20 xl:mx-24">
-        {/* List start */}
+        
         {pRatingsReviews.length > 0 ? (
           pRatingsReviews.map((item, index) => {
             return (
@@ -69,7 +69,7 @@ const AllReviews = (props) => {
                     </div>
                     <div className="flex flex-col">
                       <div className="flex">
-                        {/* Yellow Star */}
+                       
                         {[...Array(Number(item.rating))].map((index) => {
                           return (
                             <span key={index}>
@@ -84,7 +84,7 @@ const AllReviews = (props) => {
                             </span>
                           );
                         })}
-                        {/* White Star */}
+                      
                         {[...Array(5 - Number(item.rating))].map((index) => {
                           return (
                             <span key={index}>

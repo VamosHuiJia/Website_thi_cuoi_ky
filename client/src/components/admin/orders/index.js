@@ -4,7 +4,7 @@ import OrderMenu from "./OrderMenu";
 import AllOrders from "./AllOrders";
 import { orderState, orderReducer } from "./OrderContext";
 
-/* This context manage all of the orders component's data */
+
 export const OrderContext = createContext();
 
 const OrderComponent = () => {

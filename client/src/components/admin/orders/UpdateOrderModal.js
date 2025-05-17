@@ -12,7 +12,7 @@ const UpdateOrderModal = (props) => {
   useEffect(() => {
     setOid(data.updateOrderModal.oId);
     setStatus(data.updateOrderModal.status);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+ 
   }, [data.updateOrderModal.modal]);
 
   const fetchData = async () => {
@@ -40,16 +40,16 @@ const UpdateOrderModal = (props) => {
 
   return (
     <Fragment>
-      {/* Black Overlay */}
+  
       <div
         onClick={(e) => dispatch({ type: "updateOrderModalClose" })}
         className={`${
           data.updateOrderModal.modal ? "" : "hidden"
         } fixed top-0 left-0 z-30 w-full h-full bg-black opacity-50`}
       />
-      {/* End Black Overlay */}
+     
 
-      {/* Modal Start */}
+     
       <div
         className={`${
           data.updateOrderModal.modal ? "" : "hidden"
@@ -60,7 +60,7 @@ const UpdateOrderModal = (props) => {
             <span className="text-left font-semibold text-2xl tracking-wider">
               Cập nhật đơn hàng
             </span>
-            {/* Close Modal */}
+        
             <span
               style={{ background: "#303031" }}
               onClick={(e) => dispatch({ type: "updateOrderModalClose" })}

@@ -11,7 +11,7 @@ const OrderMenu = (props) => {
     <Fragment>
       <div className="col-span-1 flex items-center">
         <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center md:space-y-0 w-full">
-          {/* It's open the add order modal */}
+      
           <div
             style={{ background: "#303031" }}
             className="relative rounded-full text-gray-100 text-sm font-semibold uppercase"
@@ -114,7 +114,7 @@ const OrderMenu = (props) => {
             <SearchFilter />
           </div>
         </div>
-        {/*<AddCategoryModal/>*/}
+  
         <UpdateOrderModal />
       </div>
     </Fragment>

@@ -19,22 +19,21 @@ const ProductDetailsSection = (props) => {
 
   const { data, dispatch } = useContext(ProductDetailsContext);
   const { data: layoutData, dispatch: layoutDispatch } =
-    useContext(LayoutContext); // Layout Context
+    useContext(LayoutContext); 
 
   const sProduct = layoutData.singleProductDetail;
   const [pImages, setPimages] = useState(null);
-  const [count, setCount] = useState(0); // Slide change state
+  const [count, setCount] = useState(0); 
 
-  const [quantitiy, setQuantitiy] = useState(1); // Increse and decrese quantity state
-  const [, setAlertq] = useState(false); // Alert when quantity greater than stock
+  const [quantitiy, setQuantitiy] = useState(1);
+  const [, setAlertq] = useState(false); 
 
   const [wList, setWlist] = useState(
     JSON.parse(localStorage.getItem("wishList"))
-  ); // Wishlist State Control
+  ); // // Kiểm tra danh sách yêu thích
 
   useEffect(() => {
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchData = async () => {
@@ -46,10 +45,10 @@ const ProductDetailsSection = (props) => {
           layoutDispatch({
             type: "singleProductDetail",
             payload: responseData.Product,
-          }); // Dispatch in layout context
+          }); 
           setPimages(responseData.Product.pImages);
           dispatch({ type: "loading", payload: false });
-          layoutDispatch({ type: "inCart", payload: cartList() }); // This function change cart in cart state
+          layoutDispatch({ type: "inCart", payload: cartList() }); // Khi vào giỏ hàng 
         }
         if (responseData.error) {
           console.log(responseData.error);
@@ -58,14 +57,14 @@ const ProductDetailsSection = (props) => {
     } catch (error) {
       console.log(error);
     }
-    fetchCartProduct(); // Updating cart total
+    fetchCartProduct(); // Cập nhật giá trị
   };
 
   const fetchCartProduct = async () => {
     try {
       let responseData = await cartListProduct();
       if (responseData && responseData.Products) {
-        layoutDispatch({ type: "cartProduct", payload: responseData.Products }); // Layout context Cartproduct fetch and dispatch
+        layoutDispatch({ type: "cartProduct", payload: responseData.Products }); 
       }
     } catch (error) {
       console.log(error);
@@ -236,7 +235,7 @@ const ProductDetailsSection = (props) => {
                 >
                   Số lượng
                 </div>
-                {/* Quantity Button */}
+                
                 {sProduct.pQuantity !== 0 ? (
                   <Fragment>
                     {layoutData.inCart == null ||
@@ -360,9 +359,8 @@ const ProductDetailsSection = (props) => {
                     </span>
                   </div>
                 )}
-                {/* Quantity Button End */}
+          
               </div>
-              {/* Incart and out of stock button */}
               {sProduct.pQuantity !== 0 ? (
                 <Fragment>
                   {layoutData.inCart !== null &&
@@ -415,12 +413,10 @@ const ProductDetailsSection = (props) => {
                   )}
                 </Fragment>
               )}
-              {/* Incart and out of stock button End */}
             </div>
           </div>
         </div>
       </section>
-      {/* Product Details Section two */}
       <ProductDetailsSectionTwo />
     </Fragment>
   );

@@ -14,7 +14,6 @@ export const fetchData = async (dispatch) => {
   }, 1000);
 };
 
-/* This method call the editmodal & dispatch category context */
 export const editOrderReq = (oId, type, status, dispatch) => {
   if (type) {
     console.log("click update");
@@ -30,7 +29,7 @@ export const deleteOrderReq = async (oId, dispatch) => {
   }
 };
 
-/* Filter All Order */
+/* Bộ lọc */
 export const filterOrder = async (
   type,
   data,

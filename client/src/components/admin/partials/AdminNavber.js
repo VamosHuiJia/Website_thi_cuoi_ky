@@ -17,7 +17,7 @@ const AdminNavber = (props) => {
   return (
     <Fragment>
       <nav className="sticky z-10 flex items-center shadow-md justify-between px-4 py-4 md:px-8 top-0 w-full bg-white">
-        {/*  Large Screen Show  */}
+
         <div className="hidden lg:block lg:flex lg:items-center lg:space-x-4 mr-32">
           <span
             onClick={() => {
@@ -42,7 +42,7 @@ const AdminNavber = (props) => {
             </svg>
           </span>
         </div>
-        {/*  Large Screen Show  */}
+       
         <div className="hidden lg:block">
           <span
             onClick={(e) => history.push("/admin/dashboard")}
@@ -52,7 +52,7 @@ const AdminNavber = (props) => {
             HVN
           </span>
         </div>
-        {/* Small Screen Show */}
+    
         <div className="lg:hidden flex items-center">
           <svg
             id="hamburgerBtn"
@@ -77,6 +77,7 @@ const AdminNavber = (props) => {
             HVN
           </span>
         </div>
+
         {/* Chưa làm :(((*/}
         <div className="flex items-center">
           <div
@@ -222,7 +223,7 @@ const AdminNavber = (props) => {
           </div>
         </div>
         {/* Mobile Navber */}
-        {/* End Mobile Navber */}
+      
       </nav>
     </Fragment>
   );

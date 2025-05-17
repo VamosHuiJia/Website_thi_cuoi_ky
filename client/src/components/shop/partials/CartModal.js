@@ -20,7 +20,7 @@ const CartModal = () => {
   useEffect(() => {
     fetchData();
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+ 
   }, []);
 
   const fetchData = async () => {
@@ -55,13 +55,13 @@ const CartModal = () => {
 
   return (
     <Fragment>
-      {/* Black Overlay */}
+
       <div
         className={`${
           !data.cartModal ? "hidden" : ""
         } fixed top-0 z-30 w-full h-full bg-black opacity-50`}
       />
-      {/* Cart Modal Start */}
+      {/* Giỏ hàng */}
       <section
         className={`${
           !data.cartModal ? "hidden" : ""
@@ -74,7 +74,7 @@ const CartModal = () => {
           <div className="overflow-y-auto">
             <div className="border-b border-gray-700 flex justify-between">
               <div className="p-4 text-white text-lg font-semibold">Giỏ hàng</div>
-              {/* Cart Modal Close Button */}
+              {/* Nút close */}
               <div className="p-4 text-white">
                 <svg
                   onClick={(e) => cartModalOpen()}
@@ -97,7 +97,7 @@ const CartModal = () => {
                 products.map((item, index) => {
                   return (
                     <Fragment key={index}>
-                      {/* Cart Product Start */}
+                      {/* Sản phẩm trong cart */}
                       <div className="text-white flex space-x-2 my-4 items-center">
                         <img
                           className="w-16 h-16 object-cover object-center"
@@ -124,9 +124,9 @@ const CartModal = () => {
                               </span>{" "}
                               {subTotal(item._id, item.pPrice)}đ
                             </div>{" "}
-                            {/* SUbtotal Count */}
+                        
                           </div>
-                          {/* Cart Product Remove Button */}
+                          {/* Nút bỏ khỏi giỏ hàng */}
                           <div
                             onClick={(e) => removeCartProduct(item._id)}
                             className="absolute top-0 right-0 text-white"
@@ -146,7 +146,6 @@ const CartModal = () => {
                           </div>
                         </div>
                       </div>
-                      {/* Cart Product Start */}
                     </Fragment>
                   );
                 })}
@@ -205,7 +204,6 @@ const CartModal = () => {
           </div>
         </div>
       </section>
-      {/* Cart Modal End */}
     </Fragment>
   );
 };

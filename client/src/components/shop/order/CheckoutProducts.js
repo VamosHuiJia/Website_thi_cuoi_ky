@@ -21,8 +21,6 @@ export const CheckoutComponent = (props) => {
 
   useEffect(() => {
     fetchData(cartListProduct, dispatch);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (data.loading) {
@@ -50,7 +48,6 @@ export const CheckoutComponent = (props) => {
     <Fragment>
       <section className="mx-4 mt-20 md:mx-12 md:mt-32 lg:mt-24">
         <div className="text-2xl mx-2">Đơn hàng</div>
-        {/* Product List */}
         <div className="flex flex-col md:flex md:space-x-2 md:flex-row">
           <div className="md:w-1/2">
             <CheckoutProducts products={data.cartProduct} />

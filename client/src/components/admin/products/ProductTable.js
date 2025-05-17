@@ -13,7 +13,6 @@ const AllProduct = (props) => {
 
   useEffect(() => {
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchData = async () => {
@@ -40,7 +39,7 @@ const AllProduct = (props) => {
     }
   };
 
-  /* This method call the editmodal & dispatch product context */
+
   const editProduct = (pId, product, type) => {
     if (type) {
       dispatch({
@@ -123,7 +122,7 @@ const AllProduct = (props) => {
   );
 };
 
-/* Single Product Component */
+
 const ProductTable = ({ product, deleteProduct, editProduct }) => {
   return (
     <Fragment>

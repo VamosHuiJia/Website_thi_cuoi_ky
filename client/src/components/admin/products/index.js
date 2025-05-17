@@ -4,7 +4,6 @@ import ProductMenu from "./ProductMenu";
 import ProductTable from "./ProductTable";
 import { productState, productReducer } from "./ProductContext";
 
-/* This context manage all of the products component's data */
 export const ProductContext = createContext();
 
 const ProductComponent = () => {
@@ -17,7 +16,7 @@ const ProductComponent = () => {
 };
 
 const Products = (props) => {
-  /* To use useReducer make sure that reducer is the first arg */
+
   const [data, dispatch] = useReducer(productReducer, productState);
 
   return (
