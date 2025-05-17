@@ -231,7 +231,7 @@ class Product {
     } else {
       try {
         let products = await productModel
-          .find({ pPrice: { $lt: price } }) //Price là number
+          .find({ pPrice: { $lt: price } }) 
           .populate("pCategory", "cName")
           .sort({ pPrice: -1 });
         if (products) {
