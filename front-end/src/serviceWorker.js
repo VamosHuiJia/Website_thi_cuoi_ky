@@ -1,13 +1,13 @@
 const isLocalhost = Boolean(
+  // Kiểm tra xem ứng dụng đang chạy trên localhost
   window.location.hostname === "localhost" ||
-    // [::1] is the IPv6 localhost address.
     window.location.hostname === "[::1]" ||
-    // 127.0.0.0/8 are considered localhost for IPv4.
     window.location.hostname.match(
       /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
     )
 );
 
+// Hàm đăng ký Service Worker để hỗ trợ Progressive Web App (PWA)
 export function register(config) {
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
@@ -15,6 +15,7 @@ export function register(config) {
       return;
     }
 
+    // Tăng tốc độ tải trang
     window.addEventListener("load", () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
@@ -34,6 +35,7 @@ export function register(config) {
   }
 }
 
+// Hàm đăng ký Service Worker và xử lý các sự kiện liên quan (cache, cập nhật)
 function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
@@ -71,6 +73,7 @@ function registerValidSW(swUrl, config) {
     });
 }
 
+// Hàm kiểm tra tính hợp lệ của file Service Worker khi chạy trên localhost
 function checkValidServiceWorker(swUrl, config) {
   fetch(swUrl, {
     headers: { "Service-Worker": "script" },
@@ -97,6 +100,7 @@ function checkValidServiceWorker(swUrl, config) {
     });
 }
 
+// Hàm hủy đăng ký Service Worker
 export function unregister() {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.ready

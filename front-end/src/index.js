@@ -5,8 +5,8 @@ import * as serviceWorker from "./serviceWorker";
 import {SnackbarProvider} from 'notistack'
 ReactDOM.render(
   <React.StrictMode>
-<SnackbarProvider maxSnack={3}> 
-    <App />
+    <SnackbarProvider maxSnack={3}> 
+      <App />
     </SnackbarProvider>
   </React.StrictMode>,
   document.getElementById("root")
