@@ -22,8 +22,8 @@ const Signup = ({ onSignupSuccess }) => {
       return setData({
         ...data,
         error: {
-          cPassword: "Password doesn't match",
-          password: "Password doesn't match",
+          cPassword: "Mật khẩu không giống",
+          password: "Mật khẩu không giống",
         },
       });
     }

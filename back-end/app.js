@@ -32,7 +32,7 @@ mongoose
   })
   .then(() =>
     console.log(
-      "Kết nối okela nhé bạn ơi"
+      "======= Kết nối okela nhé bạn ơi ======="
     )
   )
   .catch((err) => console.log("Thất bại rồi huhu !!!"));
